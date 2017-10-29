@@ -1,0 +1,5 @@
+Book Notes
+
+Programming in C, 4th Ed. Kochan, Addison-Wesley - Pearson, 2014, 978-321-77641-9
+
+ 
