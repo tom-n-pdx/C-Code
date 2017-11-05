@@ -1,6 +1,7 @@
 Book Notes
 
 Programming in C, 4th Ed. Kochan, Addison-Wesley - Pearson, 2014, 978-321-77641-9
++ Hardcopy from Washington Country 
 
 
 * ToDO - Fix Stuff 
@@ -9,6 +10,7 @@ Programming in C, 4th Ed. Kochan, Addison-Wesley - Pearson, 2014, 978-321-77641-
   2. What is key to tab over
   3. Want electric { }, maybe ()
   4. Emacs great setup - search for variables, compile, etc.
+
 
 
 
