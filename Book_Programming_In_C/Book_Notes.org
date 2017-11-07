@@ -6,10 +6,12 @@ Programming in C, 4th Ed. Kochan, Addison-Wesley - Pearson, 2014, 978-321-77641-
 
 * ToDO - Fix Stuff 
 
+  0. Make all Makefiles like CHap_02 using clang and make sure works
   1. Emacs - make default ident 4, tab = 4, use // for right edge comment
   2. What is key to tab over
   3. Want electric { }, maybe ()
   4. Emacs great setup - search for variables, compile, etc.
+
 
 * Emacs Notes
   Running CC-Mode 5.32.5 M-x c-version

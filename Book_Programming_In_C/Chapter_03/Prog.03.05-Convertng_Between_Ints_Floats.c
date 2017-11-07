@@ -1,3 +1,4 @@
+//
 // Prog 3.5 p. 37 Converting between Integers and Foats
 //
 
@@ -7,7 +8,7 @@ int main (void)
 {
     float f1 = 123.125, f2;
     int i1, i2 = -150;
-    char c = 'a';
+    // char c = 'a';
 
     i1 = f1;				                                        // Foat to int conversion
     printf("%f assigned to a integer produces %i\n", f1, i1);

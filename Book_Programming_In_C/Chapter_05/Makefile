@@ -1,10 +1,7 @@
 #
 # Simple automated C Makefile to make all .c files in dir
 #
-CFLAGS 	= -Wall -Weverything -g 
-# -Werror -std=c99 -ggdb -O0
-
-C      = clang
+CFLAGS 	= -Wall
 
 # Should be equivalent to your list of C files
 SRCS  	= $(wildcard *.c)

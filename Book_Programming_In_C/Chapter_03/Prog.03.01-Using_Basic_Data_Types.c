@@ -7,10 +7,10 @@
 
 int main (void)
 {
-  int         integerVar = 100;
+  int        integerVar = 100;
   float      floatingVar = 331.79;
-  double  doubleVar = 8.44e+11;
-  char      charVar = 'W';
+  double     doubleVar = 8.44e+11;
+  char       charVar = 'W';
 
   /* _Bool    boolVar = 0; */
   bool boolVar = true;			                          // Needs stdbool.h  included
