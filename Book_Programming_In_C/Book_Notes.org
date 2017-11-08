@@ -6,12 +6,91 @@ Programming in C, 4th Ed. Kochan, Addison-Wesley - Pearson, 2014, 978-321-77641-
 
 * ToDO - Fix Stuff 
 
+  0. Make all Makefiles like CHap_02 using clang and make sure works
   1. Emacs - make default ident 4, tab = 4, use // for right edge comment
   2. What is key to tab over
   3. Want electric { }, maybe ()
   4. Emacs great setup - search for variables, compile, etc.
 
 
+* Emacs Notes
+  Running CC-Mode 5.32.5 M-x c-version
+  Current version 5.33
+
+  Guide: http://tuhdo.github.io/c-ide.html
+  https://www.cs.bu.edu/teaching/tool/emacs/programming/
+  
+
+  1. Good Overview https://www.emacswiki.org/emacs/IndentingC
+     + Read https://www.gnu.org/software/emacs/manual/html_node/ccmode/
+     + Set indent level
+       (setq-default c-basic-offset 4)
+     + Set style where braces not indented
+       (setq c-default-style "linux"
+          c-basic-offset 4)
+     + Setup tabs to be small
+           (setq-default c-basic-offset 4
+                  tab-width 4
+                  indent-tabs-mode t)
+     + M-x tabify to make file tabs
+
+     + Comment column
+       comment-set-column
+
+     + Tabs
+       https://www.emacswiki.org/emacs/SmartTabs#Retab
+
+     + Control if Tab moves over on right side line
+       https://www.gnu.org/software/emacs/manual/html_node/ccmode/Indentation-Commands.html
+       http://ergoemacs.org/emacs/emacs_tabs_space_indentation_setup.html
+
+
+
+
+       
+  1. Use // comment Style 
+     https://emacs.stackexchange.com/questions/34941/how-to-use-c-comments-in-c-mode
+     https://stackoverflow.com/questions/6909292/getting-emacs-m-to-produce-style-comments
+     
+  2. Electric C Mode - auto insert ()
+     https://www.gnu.org/software/emacs/manual/html_node/emacs/Electric-C.html
+     https://ftp.gnu.org/old-gnu/Manuals/emacs-20.7/html_node/emacs_283.html
+     https://www.gnu.org/software/emacs/manual/html_node/ccmode/Electric-Keys.html
+     https://stackoverflow.com/questions/1023770/automatically-closing-braces-in-emacs
+     
+  3. Google C Style
+     https://github.com/google/styleguide/blob/gh-pages/google-c-style.el
+
+     http://google.github.io/styleguide/
+     https://google.github.io/styleguide/cppguide.html
+
+  4. Auto complete C Mode
+     https://emacs.stackexchange.com/questions/801/how-to-get-intelligent-auto-completion-in-c
+     https://emacs.stackexchange.com/questions/21312/auto-complete-c-c-functions
+     irony, company irony
+
+     https://github.com/Sarcasm/irony-mode
+     * code completion
+     * Uses external parser
+     * Syntax checking
+     * eldoc integration
+
+     Company
+     * asynchronous usage, background deamon runs to scan code
+     * https://github.com/Sarcasm/company-irony
+
+     
+     
+       
+     
+
+
+
+
+
+     
+
+     
 
 
    

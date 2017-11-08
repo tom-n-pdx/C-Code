@@ -7,7 +7,7 @@ int main (void)
   int a = 100;
   int b = 2;
   int c = 25;
-  int d = 4;
+  // int d = 4;
 
 
   int result = a - b;			     // Subtraction
@@ -22,3 +22,4 @@ int main (void)
   result = a + b * c;			     // Precedence
   printf("a + b * c = %i\n", result);
 
+}
