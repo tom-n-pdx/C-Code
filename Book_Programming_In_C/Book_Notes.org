@@ -6,7 +6,7 @@ Programming in C, 4th Ed. Kochan, Addison-Wesley - Pearson, 2014, 978-321-77641-
 
 * ToDO - Fix Stuff 
 
-  0. Make all Makefiles like CHap_02 using clang and make sure works
+  0. Make all Makefiles like Chap_02 using clang and make sure works
   1. Emacs - make default ident 4, tab = 4, use // for right edge comment
   2. What is key to tab over
   3. Want electric { }, maybe ()
@@ -94,3 +94,33 @@ Programming in C, 4th Ed. Kochan, Addison-Wesley - Pearson, 2014, 978-321-77641-
 
 
    
+
+* Chapter 7 - Functions
+
+  Major note:
+  * scalars - passed by value
+
+    Value is copied. Changes in function don't impact value.
+
+  * arrays - passed by reference
+
+    A pointer to array is passed, changes to values are reflected in main program.
+    Function doesn't know size array natural. Either defined at compile time to size, or must pass the size to
+    function.
+
+  * multidimensional array
+
+    MUST declare number of columns. 
+    int array_values[][50]
+
+    In C99, optional C11, can use Variable Length Array. Pass in array size first.
+    void displayMatrx(int nRows, int nCols, matrix(nRows, nCols)
+
+    But, non-standard and array maybe allocated on stack. Also max size limited.
+    And CAN NOT initialize values of variable length arrays.
+
+    gcc & clang support it
+
+  * 
+
+  

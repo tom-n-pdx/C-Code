@@ -1,0 +1,113 @@
+
+How set up memory for DMU's
+
+* ToDo
+  1. Check data structure used for input by Gurobi, lpSolve, etc.
+  2. Note Tim to ask
+
+
+* Data Structure
+
+** Inputs
+
+   N x Inputs, M x Outputs in each column, X number of DMU's
+
+   Align each DMU to start on a L1 Line? L2 Line?
+
+   Make # DMU's array non-binary size so not cache alias?
+
+
+** Outputs
+
+   1. Efficient Boolean
+   2. Efficiency Float
+   3. Lambda - sparse array?
+
+
+** Thoughts
+
+   * Store is efficient as flag with other flags at end of row with Inputs / Outputs
+
+
+* Test
+
+** Simple
+
+   1. Store a random value in every input, output
+   2. On second run sum inputs & outputs - store in efficiency
+   3. Save
+      * on Disk
+      * send to fifo
+      * send to message queue
+
+
+* Parallelism
+  1. For a DMU - us more then one core / thread to solve
+  2. Solve each DMU in parallel
+  3. If doing across time, do in parallel
+
+* Write own Solver
+  * DEA pretty simple
+  * Use known efficient values to assist in solving
+  * Other tricks
+  * Simplex
+  * Solve multiple choices in parallel
+  
+* Implement Jose Dula hull solver
+
+* Quick hull
+
+* Use CUDA solver?
+
+* Questions
+  1. arrangment of data in memory
+
+* Questions
+
+** Question Tim - 1
+   OK,
+
+   I'd like your advice on a relatively straightforward question.
+
+   Yes, and regardless of what you tell me I'm going to run a bunch of small benchmarks on the code to check what
+   works best.
+
+   I'm working with some moderately large arrays of data (large = 2X - 4X amount of real memory on machine).
+
+   The data is a 2d array of double precession FP numbers. Each row is ~ 2 - 10 elements by 50K - 200K (or 1M)
+   row's long.
+
+   I'm going to be processing the data sequentially a row at a time. From row 1 to row N.
+
+   Initially the data will be processed by single thread a row at a time. Eventually I'll be using multiple
+   threads on multiple cores on a CPU. The final version will be using multiple CPU's, Phi co-processors on a
+   HPC system with 100's to 1000's of CPUs.
+
+   The data is embarrassingly parallel so cutting it up and processing it in parallel shouldn't be a
+   problem. There is some read sharing and no write sharing.
+
+   Heer's my question - how should I align the array to get the best memory performance?
+
+   My gut feel is: make sure to align the data so the start of row(s) aligns with the 64B L1 cache
+   boundary. If I can fit two rows in a cache lign, great, if not, make sure every line aligns with a L1
+   boundary.
+
+   Now, I've got no idea if I should worry about aligning the data with the L2 line size or page size. I'll be
+   running on Xeon CPU's, in some cases with a Phi co-processor. It will be under Linux (64b Ubuntu or
+   CentOS).
+
+   My plan is to initially allocate one big chunk on the heap and I'll probably eventually move to allocating
+   a smaller chunk (or 3) per thread on the heap.
+
+   When I move to using more then one thread, more then one core, or more then one CPU I'll have to worry
+   about L2/L3 size and how big a chunk each thread is working on so I don't stomp on each other in the L3.
+
+   So thoughts? Am I thinking of this the right way?
+
+   I'm kind of expecting you to tell me to not worry about it - modern compilers are so smart I shouldn't
+   think very hard.
+
+   One hard part is the number of elements in the row and number of rows depends on the problem being worked
+   on - so I need to code it in a way that's flexible. Also I'll be running on different systems so I'm
+   planning to recompile for each system - but not each dataset.
+
