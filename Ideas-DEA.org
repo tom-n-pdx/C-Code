@@ -1,9 +1,20 @@
 
 How set up memory for DMU's
 
-* ToDo
-  1. Check data structure used for input by Gurobi, lpSolve, etc.
-  2. Note Tim to ask
+* ToDo Items
+** TODO Check data structure used for input by Gurobi, lpSolve, etc.
+** DONE Note Tim to ask
+   CLOSED: [2017-11-15 Wed 22:52]
+   - State "WAITING"    from "STARTED"    [2017-11-15 Wed 22:52]
+   * Sent Email
+** DONE Answer Intel email
+   CLOSED: [2017-11-15 Wed 22:52]
+** TODO Find a Good Random Generator
+   * Intel has one, other vector libs
+** TODO Find a Good Vector Lib
+   * Intel
+   * Others
+
 
 
 * Data Structure
