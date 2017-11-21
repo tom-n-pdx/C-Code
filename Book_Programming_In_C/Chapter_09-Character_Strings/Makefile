@@ -4,7 +4,8 @@
 
 CC          = gcc
 #CFLAGS  = -Wall -g
-CFLAGS  = -Wall
+CFLAGS  = -Wall -Wc++-compat
+#CFLAGS  = -Wall
 
 #CC          = clang
 # -Werror -std=c99 -ggdb -O0
