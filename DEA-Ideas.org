@@ -122,3 +122,72 @@ How set up memory for DMU's
    on - so I need to code it in a way that's flexible. Also I'll be running on different systems so I'm
    planning to recompile for each system - but not each dataset.
 
+
+* Simple Random Number Generator
+  + Don't use sin/cos, no sqr
+  + Start with R, simple generate random numbers
+  + Try various options
+    * Compilers
+      1. gcc
+      2. langc
+      3. Intel Compiler
+    * Libraries
+      * Vector Libs
+	1. Intel
+	2. Various Open Source Vector Libs
+      * Random Libs
+	1. Intel
+	2. One in random Lib
+    * How Code vector alog
+    * How structure data in memory
+    * Use of #pragma
+    * Use of Compiler Vector Directions
+  + Issues
+    * Code needs to run on multiple platforms - Intel compiler may not generate good code for non-Intel CPU
+    * Code needs to run with / without Phi
+    * Check how fast Microsoft R is
+    
+* Simple DEA
+  * Simple clean minimal DEA on github
+  * Standard code for normal DEA, nothing special, moderately fast
+
+* Simple Simplex solver
+  * Create simple simplex solver to understand how simplex works.
+  * Optimize for standard DEA code
+  * Remove inefficient DMU's on each loop
+  * Try other simple solvers
+  * No integer, binary or other weird stuff - just simple linear solver.
+  * Benchark against lpSolve and Gurobi
+  * Test speed ups
+    * Vector compiler
+    * Multiple threads
+    * Data arrangment
+    * How solve multiple DMU's in parallel
+    * Sorting data
+    * Jose alternative suggestion linear sqn
+    * hull alog.
+    * Vector library
+    * Hand code inner loop in assembler
+    * How start the solution for next pivot
+    * Select pivot alogs
+    * Alternatives to simplex alog
+    
+* Implement QuickHull
+  * Single Thread
+  * Use multiple threads / cores to solve
+  * Use MMX / Vector
+
+  
+
+
+* Big DEA
+  * Alternative Parallel DEA package that has same calls, but a lot more hacked code for speed. Support subset
+    of API's. Support multiple solver backends.
+  * INclude Phi, MMX support - maybe hand rolled 
+  * Treat as streaming problem to make simpler? One core filtering input, one core generating eff?
+  * Streaming qhull?
+
+	   
+* Levels of DEA parallelism
+  * Initial sorting DMU's
+  * Each DMU tested in parallel when checking for 
